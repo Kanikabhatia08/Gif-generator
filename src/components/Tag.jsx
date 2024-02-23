@@ -1,8 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { Spinner } from "./Spinner";
 import useGif from "../hooks/useGif";
-const API_KEY = '1xADsnrJGgPBdCFWGyTtDJy8wqRBrZEk';
-
 
 const Tag=() =>{  
 
