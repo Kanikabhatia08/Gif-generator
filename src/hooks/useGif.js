@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-// const API_KEY ='1xADsnrJGgPBdCFWGyTtDJy8wqRBrZEk';
 const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
 // const tagMemeUrl = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${tag}`;
 
@@ -15,9 +14,9 @@ const useGif = (tag) => {
         setLoading(true)
         const {data} = await axios.get(tag ? `${url}&tag=${tag}` : url); //returns promise
         // console.log(output)
-        console.log(data,"yoooooo");
+        // console.log(data,"data");
         const imageSource = data.data.images.fixed_height.url;
-        console.log(imageSource);
+        // console.log(imageSource);
         setGif(imageSource);
         setLoading(false);
     }

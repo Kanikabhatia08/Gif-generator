@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { Spinner } from "./Spinner";
 import useGif from "../hooks/useGif";
 
@@ -31,21 +31,22 @@ const Tag=() =>{
 
   return (
 
-  <div className="w-11/12   bg-blue-500 items-center rounded-lg border border-black mt-10 
-  flex mx-auto flex-col mb-10">
-    <h1 className="text-2xl mt-[15px] underline mx-auto uppercase font-bold">Random {tag} Gif</h1>
-    {
-      loading ? (<Spinner/>) : (<img src={gif} width="450"/>)
-    }
-    <input onChange={(event) => setTag(event.target.value)} value={tag}
-      className="w-10/12 text-lg py-2 text-center rounded-lg mb-[4px]"/>
-    
-    <button onClick={() => fetchData(tag)}
-    className="bg-green-200 w-10/12 mx-auto p-2 uppercase font-semibold rounded-lg">
-      Generate
-    </button>
-    
-  </div>);
+    <div className="w-11/12   bg-blue-500 items-center rounded-lg border border-black mt-10 
+    flex mx-auto flex-col mb-10">
+      <h1 className="text-2xl mt-[15px] underline mx-auto uppercase font-bold">Random {tag} Gif</h1>
+      {
+        loading ? (<Spinner/>) : (<img src={gif} width="450" alt={tag}/>)
+      }
+      <input onChange={(event) => setTag(event.target.value)} value={tag}
+        className="w-10/12 text-lg py-2 text-center rounded-lg mb-[4px]"/>
+      
+      <button onClick={() => fetchData(tag)}
+      className="bg-green-200 w-10/12 mx-auto p-2 uppercase font-semibold rounded-lg">
+        Generate
+      </button>
+      
+    </div>
+  );
 }
 
 

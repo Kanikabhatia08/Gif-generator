@@ -25,20 +25,19 @@ const Random=() =>{
   const {gif, loading, fetchData} = useGif();
   
   return (
-
-  <div className="w-11/12  bg-green-500 items-center rounded-lg border border-black mt-10 
-  flex mx-auto flex-col gap-y-5">
-    <h1 className="text-2xl mt-[15px] underline mx-auto uppercase font-bold">Random Gif</h1>
-    {
-      loading ? (<Spinner/>) : (<img src={gif} width="450"/>)
-    }
-    
-    <button onClick={() => fetchData()}
-    className="bg-green-200 w-10/12 mx-auto p-2 uppercase font-semibold rounded-lg">
-      Generate
-    </button>
-    
-  </div>);
+    <div className="w-11/12  bg-green-500 items-center rounded-lg border border-black mt-10 
+      flex mx-auto flex-col gap-y-5">
+      <h1 className="text-2xl mt-[15px] underline mx-auto uppercase font-bold">Random Gif</h1>
+      {
+        loading ? (<Spinner/>) : (<img src={gif} width="450" alt="gif"/>)
+      }
+      
+      <button onClick={() => fetchData()}
+        className="bg-green-200 w-10/12 mx-auto p-2 uppercase font-semibold rounded-lg">
+        Generate
+      </button>
+    </div>  
+  );
 }
 
 
